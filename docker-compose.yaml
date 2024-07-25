@@ -5,9 +5,9 @@ services:
       context: ./frontend-repo
       dockerfile: Dockerfile
     ports:
-      - "3000:80"
+      - "3000:3000" 
     volumes:
-      - data-volume:/usr/share/nginx/html/public/data
+      - data-volume:/app/public/data
 
   backend:
     build:
@@ -17,7 +17,6 @@ services:
       - "3001:3001"
     volumes:
       - data-volume:/app/public/data
-
 
 volumes:
   data-volume:
